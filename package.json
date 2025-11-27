@@ -1,44 +1,68 @@
 {
-  "name": "@yambwa/pretty-logger",
-  "version": "1.0.0",
-  "description": "A lightweight, extensible logger with log levels, pretty and JSON output, context support, and pluggable transports for Node.js and TypeScript projects.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
-  "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch",
-    "test": "jest",
-    "test:watch": "jest --watch",
-    "prepublishOnly": "npm run build",
-    "lint": "eslint src/**/*.ts"
-  },
-  "keywords": [
-    "logger",
-    "logging",
-    "pretty-logs",
-    "json-logs",
-    "transport",
-    "context",
-    "typescript"
-  ],
-  "author": "Yambwa Imwaka",
+  "name": "@yambwa/ussd-lab",
+  "version": "0.1.0",
+  "description": "A USSD flow simulator and testing lab for developers – design, run, and debug USSD menus without connecting to a mobile network.",
   "license": "MIT",
-  "engines": {
-    "node": ">=14.0.0"
+  "author": "YambwaImwaka",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/YambwaImwaka/pretty-lodger.git"
   },
-  "devDependencies": {
-    "@types/jest": "^29.5.0",
-    "@types/node": "^20.0.0",
-    "@typescript-eslint/eslint-plugin": "^6.0.0",
-    "@typescript-eslint/parser": "^6.0.0",
-    "eslint": "^8.0.0",
-    "jest": "^29.5.0",
-    "ts-jest": "^29.1.0",
-    "typescript": "^5.0.0"
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./core": {
+      "import": "./dist/core/index.js",
+      "types": "./dist/core/index.d.ts"
+    },
+    "./simulator": {
+      "import": "./dist/simulator/index.js",
+      "types": "./dist/simulator/index.d.ts"
+    },
+    "./testing": {
+      "import": "./dist/testing/index.js",
+      "types": "./dist/testing/index.d.ts"
+    }
   },
   "files": [
     "dist",
     "README.md",
     "LICENSE"
-  ]
+  ],
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "test": "vitest",
+    "test:ui": "vitest --ui",
+    "lint": "eslint src --ext .ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "type-check": "tsc --noEmit",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "ussd",
+    "simulator",
+    "testing",
+    "africa",
+    "fintech",
+    "mobile-money",
+    "devtool"
+  ],
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.0.0",
+    "prettier": "^3.0.0",
+    "typescript": "^5.0.0",
+    "vitest": "^1.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
 }

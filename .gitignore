@@ -1,7 +1,12 @@
 node_modules/
 dist/
-*.log
-.DS_Store
 coverage/
+.DS_Store
+*.log
 .env
 .env.local
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
